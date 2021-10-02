@@ -1,2 +1,14 @@
 server:
   port: 8901
+spring:
+  datasource:
+    pando-kola:
+      jdbc-url: jdbc:mysql://127.0.0.1:3307/pando_kola?useUnicode=true&autoReconnect=true&characterEncoding=utf-8
+      username: root
+      password: 123456890
+      driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  configuration:
+    pando-kola:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      map-underscore-to-camel-case: true
