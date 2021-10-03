@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.pando.pandokola.dao.pandokola.SystemSettingMapper;
 import org.pando.pandokola.model.SystemSetting;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ public class TestController {
     @Autowired
     SystemSettingMapper systemSettingMapper;
 
+    @CrossOrigin
     @RequestMapping("/hello")
     public String hello(@RequestParam("name") String name) {
         log.info("hello, {}", name);
