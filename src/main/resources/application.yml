@@ -12,3 +12,6 @@ mybatis:
     pando-kola:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
       map-underscore-to-camel-case: true
+pagehelper:
+  helper-dialect: mysql
+  page-size-zero: true
