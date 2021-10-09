@@ -7,10 +7,7 @@ import org.pando.pandokola.model.Result;
 import org.pando.pandokola.model.SystemSetting;
 import org.pando.pandokola.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 网站的所有接口
@@ -63,5 +60,14 @@ public class PandoKolaController {
     @CrossOrigin
     public Result<PageInfo<SystemSetting>> getAllSystemSettingByPage(@RequestParam("pageStart") int pageStart, @RequestParam("pageLimit") int pageLimit) {
         return menuService.getAllSystemSettingByPage(pageStart, pageLimit);
+    }
+
+    /**
+     * 搜索接口
+     */
+    @PostMapping("/testSearch")
+    @CrossOrigin
+    public Result<String> testSearch(@RequestParam("text") String text) {
+        return menuService.testSearch(text);
     }
 }

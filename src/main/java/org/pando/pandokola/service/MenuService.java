@@ -76,6 +76,10 @@ public class MenuService {
         return new Result<>(ApiConstants.ResponseStatusCode.OK, "OK", new PageInfo<>(dataList));
     }
 
+    public Result<String> testSearch(String text) {
+        return new Result<>(ApiConstants.ResponseStatusCode.OK, "OK", "后端返回结果为：" + text);
+    }
+
     public static void main(String[] args) {
         new MenuService().getMenuInfo();
     }
